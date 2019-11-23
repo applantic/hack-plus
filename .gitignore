@@ -1,0 +1,5 @@
+node_modules
+.idea
+id_rsa.pub
+id_rsa
+build
