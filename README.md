@@ -1,4 +1,4 @@
-# HackYeah - Philip Moris Buds problem
+# HackPlus 2019 
 
 ## Available Scripts
 
@@ -8,4 +8,4 @@
 
 ## Design
 
-https://www.figma.com/file/owpFvALY0IHlCgdpkSUbNJ/Philip-Morris?node-id=0%3A1# hack-plus
+https://www.figma.com/file/JP236g8D4f0tM8g9QK9yVD/H%2B?node-id=1%3A218&fbclid=IwAR1-AArsnp9aKEfti069ap-PUSeJydIwf-Q21d5iPfGgse_XnbtKh66Vwaw
