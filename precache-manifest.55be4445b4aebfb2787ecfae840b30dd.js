@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d667482aba5c407002c768c0cdda0d7",
+    "revision": "69c174fa7938460f73834f30e417fa65",
     "url": "/hack-plus/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hack-plus/static/css/2.098bc035.chunk.css"
   },
   {
-    "revision": "7c6933de7f13c379732c",
+    "revision": "397489b5515b247e43f4",
     "url": "/hack-plus/static/css/main.461d90f5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hack-plus/static/js/2.8387f094.chunk.js"
   },
   {
-    "revision": "7c6933de7f13c379732c",
-    "url": "/hack-plus/static/js/main.4ca1bec2.chunk.js"
+    "revision": "397489b5515b247e43f4",
+    "url": "/hack-plus/static/js/main.d05d7b74.chunk.js"
   },
   {
     "revision": "ad93b325d0d7cce7cfd2",
