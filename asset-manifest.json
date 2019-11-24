@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/hack-plus/static/css/main.461d90f5.chunk.css",
+    "main.js": "/hack-plus/static/js/main.4ca1bec2.chunk.js",
+    "main.js.map": "/hack-plus/static/js/main.4ca1bec2.chunk.js.map",
+    "runtime~main.js": "/hack-plus/static/js/runtime~main.95516bf0.js",
+    "runtime~main.js.map": "/hack-plus/static/js/runtime~main.95516bf0.js.map",
+    "static/css/2.098bc035.chunk.css": "/hack-plus/static/css/2.098bc035.chunk.css",
+    "static/js/2.8387f094.chunk.js": "/hack-plus/static/js/2.8387f094.chunk.js",
+    "static/js/2.8387f094.chunk.js.map": "/hack-plus/static/js/2.8387f094.chunk.js.map",
+    "index.html": "/hack-plus/index.html",
+    "precache-manifest.872d0ae009b9a4520b1e97ae809f0d96.js": "/hack-plus/precache-manifest.872d0ae009b9a4520b1e97ae809f0d96.js",
+    "service-worker.js": "/hack-plus/service-worker.js",
+    "static/css/2.098bc035.chunk.css.map": "/hack-plus/static/css/2.098bc035.chunk.css.map",
+    "static/css/main.461d90f5.chunk.css.map": "/hack-plus/static/css/main.461d90f5.chunk.css.map",
+    "static/media/profile_photo.png": "/hack-plus/static/media/profile_photo.2143a8b7.png"
+  }
+}
