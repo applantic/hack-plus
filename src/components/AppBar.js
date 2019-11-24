@@ -40,7 +40,6 @@ const styles = theme => ({
     fontFamily: 'Lato',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: 24.2907,
     textAlign: 'center',
     textTransform: 'uppercase',
   },
@@ -109,16 +108,14 @@ class MainAppBar extends React.Component {
           <Grid
           container
           direction="row"
-          justify="space-around"
-          alignItems="center"
           >
           {this.props.canGoBack && (
             <ArrowBackIosIcon className={classes.arrow} onClick={this.onBackHandler}/>
           )}
             <div className={classes.header}>
-            <div>
-            {/* <LogoIcon style={{width: '300px', height: '35px'}}/> */}
-            </div>
+              <div>
+                <LogoIcon style={{width: '150px', height: '25px'}}/>
+              </div>
             </div>
             <InfoOutlinedIcon className={classes.info} onClick={this.onInfoClick} />
             </Grid>
@@ -132,7 +129,7 @@ class MainAppBar extends React.Component {
         >
           <div className={classes.modal}>
             <div className={classes.textDiv}>
-              {/* <div><LogoIcon style={{width: '250px', height: '30px'}}/></div> */}
+              <div><LogoIcon style={{width: '150px', height: '25px'}}/></div>
               <div>
                 <Grid container justify="center" alignItems="center">
                   <Grid item xs={12}>
