@@ -4,7 +4,10 @@ import COLORS from '../variables/colors';
 
 const useStyles = makeStyles({
   container: {
-    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginRight: '10px',
+    marginLeft: '10px',
     padding: '10px 14px',
     margin: '10px 0px',
     boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
@@ -13,12 +16,6 @@ const useStyles = makeStyles({
     height: "58px",
     textAlign: "center",
     backgroundColor: props => props.selected ? COLORS.yellow_base : COLORS.white,
-  },
-  spread: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    width: "100%"
   },
   textBold: {
     fontWeight: "500"
@@ -34,11 +31,9 @@ export default function Option({name, selected, onClick}) {
 
   return (
     <Button className={[classes.container]} onClick={onClick}>
-      <div className={classes.spread}>
         <div className={classes.name}>
           <div className={classes.textBold}>{name}</div>
         </div>
-      </div>
     </Button>
   );
 }
