@@ -150,7 +150,7 @@ class NeedsSelector extends React.Component {
               </div>
             </div>
             <div>
-              <button className={this.props.classes.button}>DALEJ</button>
+              <button className={this.props.classes.button} onClick={() => this.props.history.push('/category')}>DALEJ</button>
             </div>
         </div>
       </Container>
