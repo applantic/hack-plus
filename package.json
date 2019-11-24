@@ -1,7 +1,6 @@
 {
-  "name": "smartbin",
+  "name": "aktywer",
   "version": "0.1.0",
-  "homepage": "https://smartbin.best",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.2",
