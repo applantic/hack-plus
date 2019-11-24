@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import Category from './components/Category';
 import SimpleBottomNavigation from "./components/SimpleBottomNavigation";
 import {withStyles} from '@material-ui/core/styles';
 import MainAppBar from './components/AppBar';
@@ -35,8 +36,8 @@ const styles = theme => ({
 const theme = createMuiTheme({
     palette: {
       primary: {
-        main: COLORS.green,
-        contrastText: COLORS.white,
+        main: COLORS.yellow_base,
+        contrastText: COLORS.black_base,
       }
     }
   },
@@ -59,6 +60,7 @@ function App({classes}) {
             <Route path="/dashboard/" component={Dashboard}/>
             <Route path="/profile/" component={Profile} />
             <Route path="/trade/:itemId" component={TradePage}/>
+            <Route path="/category/" component={Category}/>
             <SimpleBottomNavigation/>
           </Router>
         </div>
