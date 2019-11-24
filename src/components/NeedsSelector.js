@@ -1,4 +1,4 @@
-import { Container, CssBaseline, withStyles, Typography, Grid } from '@material-ui/core';
+import { Container, CssBaseline, withStyles, Grid } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -7,7 +7,6 @@ import SightIcon from '../img/icons/sight.png';
 import MotorIcon from '../img/icons/motor.png';
 import EarIcon from '../img/icons/ear.png'
 import HelperIcon from '../img/icons/helper.png';
-import MobileStepper from '@material-ui/core/MobileStepper';
 
 const styles = theme => ({
   '@global': {
@@ -31,6 +30,9 @@ const styles = theme => ({
     textAlign: 'center',
     display: 'table-cell',
     verticalAlign: 'middle'
+  },
+  needsItemSelected: {
+    backgroundColor: COLORS.yellow_base
   },
   needsItemIcon: {
     height: 60,
@@ -75,6 +77,22 @@ class NeedsSelector extends React.Component {
 
   constructor(props) {
     super(props);
+    this.onNeedSelected = this.onNeedSelected.bind(this);
+    this.state = {
+      selectedNeed: {}
+    };
+  }
+
+  onNeedSelected(index) {
+    var selectedNeed = this.state.selectedNeed;
+    if (selectedNeed[index]) {
+      selectedNeed[index] = false;
+    } else {
+      selectedNeed[index] = true;
+    }
+    this.setState({
+      selectedNeed: selectedNeed
+    });
   }
 
   render() {
@@ -87,16 +105,16 @@ class NeedsSelector extends React.Component {
           <div>
             <Grid container className={this.props.classes.needsRow}>
               <Grid item xs>
-                <div className={this.props.classes.needsItemWrapper}>
-                  <div className={this.props.classes.needsItem}>
+                <div className={this.props.classes.needsItemWrapper} onClick={() => this.onNeedSelected(0)}>
+                  <div className={`${this.props.classes.needsItem} ${this.state.selectedNeed[0] ? this.props.classes.needsItemSelected : ''}`}>
                     <div><img src={SightIcon} className={this.props.classes.needsItemIcon} alt="Nie widzę"/></div>
                     <div>NIE WIDZĘ</div>
                   </div>
                 </div>
               </Grid>
               <Grid item>
-                <div className={this.props.classes.needsItemWrapper}>
-                  <div className={this.props.classes.needsItem}>
+                <div className={this.props.classes.needsItemWrapper} onClick={() => this.onNeedSelected(1)}>
+                  <div className={`${this.props.classes.needsItem} ${this.state.selectedNeed[1] ? this.props.classes.needsItemSelected : ''}`}>
                     <div><img src={MotorIcon} className={this.props.classes.needsItemIcon} alt="Mam ograniczenia ruchowe"/></div>
                     <div>MAM OGRANICZENIA RUCHOWE</div>
                   </div>
@@ -105,16 +123,16 @@ class NeedsSelector extends React.Component {
             </Grid>
             <Grid container className={this.props.classes.needsRow}>
               <Grid item xs>
-                <div className={this.props.classes.needsItemWrapper}>
-                  <div className={this.props.classes.needsItem}>
+                <div className={this.props.classes.needsItemWrapper} onClick={() => this.onNeedSelected(2)}>
+                  <div className={`${this.props.classes.needsItem} ${this.state.selectedNeed[2] ? this.props.classes.needsItemSelected : ''}`}>
                     <div><img src={EarIcon} className={this.props.classes.needsItemIcon} alt="Nie słyszę"/></div>
                     <div>NIE SŁYSZĘ</div>
                   </div>
                 </div>
               </Grid>
               <Grid item>
-                <div className={this.props.classes.needsItemWrapper}>
-                  <div className={this.props.classes.needsItem}>
+                <div className={this.props.classes.needsItemWrapper} onClick={() => this.onNeedSelected(3)}>
+                  <div className={`${this.props.classes.needsItem} ${this.state.selectedNeed[3] ? this.props.classes.needsItemSelected : ''}`}>
                     <div><img src={HelperIcon} className={this.props.classes.needsItemIcon} alt="Jestem opiekunem"/></div>
                     <div>JESTEM OPIEKUNEM</div>
                   </div>
