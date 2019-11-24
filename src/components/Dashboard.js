@@ -1,5 +1,4 @@
-import { Container, CssBaseline, withStyles } from '@material-ui/core';
-import L from 'leaflet';
+import { Container, CssBaseline, withStyles, Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -11,6 +10,7 @@ import iqosWhite from '../img/iqos-white.png';
 import Alternative from "./Alternative";
 import PointCounter from './PointCounter';
 import Carousel from "./Carousel";
+import NeedsSelector from './NeedsSelector';
 
 const styles = theme => ({
   '@global': {
@@ -27,61 +27,18 @@ const styles = theme => ({
   avatar: {
     margin: 10
   },
-  wasteButton: {
-    marginTop: theme.spacing(2)
+  title: {
+    fontSize: 24,
+    textAlign: 'center',
+    marginTop: 40,
+    marginBottom: 20
   }
 });
-
-const binIcon = new L.Icon({
-  iconUrl: require('../img/smart-bin.svg'),
-  iconRetinaUrl: require('../img/smart-bin.svg'),
-  iconAnchor: [12.5, 35],
-  popupAnchor: null,
-  iconSize: [25, 35],
-  shadowUrl: null,
-  shadowSize: null,
-  shadowAnchor: null,
-})
-
-export const items = [
-  {
-    id: "1",
-    img: panda,
-    name: 'Wesprzyj funacje WWF',
-    price: '220pkt = 5zł',
-    amount: 'Przekaż 220pkt',
-  },
-  {
-    id: "2",
-    img: ziel,
-    name: 'Posadź drzewo!',
-    price: '220pkt = Drzewo',
-    amount: 'Przekaż 220pkt',
-  }
-]
-
-const alternatives = [
-  {
-    img: iqosBlack,
-    name: 'Iqos',
-    description: '10% zniżki',
-  },
-  {
-    img: iqosWhite,
-    name: 'Iqos',
-    description: '10% zniżki',
-  }
-]
 
 class Dashboard extends React.Component {
 
   constructor(props) {
     super(props);
-    this.onMapClick = this.onMapClick.bind(this);
-  }
-
-  onMapClick() {
-    this.props.history.push('/map');
   }
 
   render() {
@@ -92,15 +49,12 @@ class Dashboard extends React.Component {
       <Container maxWidth="lg">
         <CssBaseline />
         <div>
-          <PointCounter content={{leftPoint: 170, leftText: "PETÓW", rightPoint: 510, rightText: "PKT"}} />
+          <Typography variant="body1" className={this.props.classes.title}>OKREŚL POTRZEBY</Typography>
         </div>
         <div>
-          <div style={{ paddingTop: '15px' }} > MAKE THE WORLD BETTER</div>
-          {items.map(item => <Item {...item} />)}
+          <NeedsSelector/>
         </div>
         <div>
-          <div style={{ paddingTop: '15px' }} >SMOKE BETTER FOR THE ENVIRONMENT</div>
-          <Carousel >{alternatives.map(alternative => <Alternative {...alternative} />)}</Carousel>
         </div>
       </Container>
     );

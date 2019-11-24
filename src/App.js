@@ -12,7 +12,6 @@ import COLORS from './variables/colors';
 import Fonts from "./components/Fonts";
 import Profile from "./components/Profile";
 import ReactGA from 'react-ga';
-import TradePage from "./components/TradePage";
 ReactGA.initialize('UA-148040080-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -54,12 +53,11 @@ function App({classes}) {
       <MuiThemeProvider theme={theme}>
         <div className={classes.root}>
           <Router>
-            <MainAppBar header="SMART BIN"/>
+            <MainAppBar header="POMAGAMY"/>
             <Route path="/" exact component={Dashboard}/>
             <Route path="/login/" component={Login}/>
             <Route path="/dashboard/" component={Dashboard}/>
             <Route path="/profile/" component={Profile} />
-            <Route path="/trade/:itemId" component={TradePage}/>
             <Route path="/category/" component={Category}/>
             <SimpleBottomNavigation/>
           </Router>

@@ -5,7 +5,9 @@ const COLORS = {
     black: '#000000',
     gray: '#404041',
     yellow_base: '#FFD41F',
-    black_base: '#292929'
+    black_base: '#292929',
+    grey_base: '#C4C4C4',
+    border: '#0000DD'
 }
   
 export default COLORS;
