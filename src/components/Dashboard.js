@@ -132,15 +132,6 @@ class Dashboard extends React.Component {
         <div>
           <PointCounter content={{leftPoint: 170, leftText: "PETÓW", rightPoint: 510, rightText: "PKT"}} />
         </div>
-        <div style={{ height: '220px' }}>
-          <Map center={position} zoom={15} onClick={this.onMapClick}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-            />
-            {leafetMarkers}
-          </Map>
-        </div>
         <div>
           <div style={{ paddingTop: '15px' }} > MAKE THE WORLD BETTER</div>
           {items.map(item => <Item {...item} />)}

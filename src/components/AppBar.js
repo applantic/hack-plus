@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Grid, withStyles, Modal } from '@material-ui/core';
+import { Grid, withStyles, Modal, colors } from '@material-ui/core';
 import { withRouter } from 'react-router';
 import COLORS from '../variables/colors';
 import LogoIcon from './LogoIcon';
@@ -19,6 +19,9 @@ const styles = theme => ({
     marginBottom: 14,
     height: '100%',
   },
+  appbar: {
+    backgroundColor: COLORS.yellow_base
+  },
   arrow: {
     position: 'absolute',
     left: '5%',
@@ -26,6 +29,9 @@ const styles = theme => ({
   info: {
     position: 'absolute',
     right: '5%',
+    color: COLORS.black_base,
+    width: '30px',
+    height: '30px'
   },
   title: {
     flexGrow: 1,
@@ -44,8 +50,8 @@ const styles = theme => ({
     height: '70%',
     top: '15%',
     left: '5%',
-    color: theme.palette.common.white,
-    backgroundColor: 'rgba(41, 181, 116, 0.9)',
+    color: COLORS.black_base,
+    backgroundColor: COLORS.yellow_base,
     border: '1px solid #777',
     borderRadius: '25px',
     boxShadow: theme.shadows[5],
@@ -98,7 +104,7 @@ class MainAppBar extends React.Component {
 
       return (
         <div className={this.props.classes.root}>
-        <AppBar position="static" color="primary">
+        <AppBar position="static" className={this.props.classes.appbar}>
           <Toolbar>
           <Grid
           container
@@ -111,7 +117,7 @@ class MainAppBar extends React.Component {
           )}
             <div className={classes.header}>
             <div>
-            <LogoIcon style={{width: '300px', height: '35px'}}/>
+            {/* <LogoIcon style={{width: '300px', height: '35px'}}/> */}
             </div>
             </div>
             <InfoOutlinedIcon className={classes.info} onClick={this.onInfoClick} />
@@ -126,25 +132,20 @@ class MainAppBar extends React.Component {
         >
           <div className={classes.modal}>
             <div className={classes.textDiv}>
-              <div><LogoIcon style={{width: '250px', height: '30px'}}/></div>
+              {/* <div><LogoIcon style={{width: '250px', height: '30px'}}/></div> */}
               <div>
-                <div style={{textAlign: 'left'}}><LeafIcon/></div>
                 <Grid container justify="center" alignItems="center">
                   <Grid item xs={12}>
-                    <Typography variant="body2">This is a project created during Hack Yeah 2019 hackathon.</Typography>
+                    <Typography variant="body2">Aplikacja utworzona w ramach Hackathon+ A11y</Typography>
                     <br/>
-                    <Typography variant="body2">We have created a solution based on the Smart Bin system and applications. We invite you to familiarize yourself with the prototype.</Typography>
+                    <Typography variant="body2">Zapraszamy do zapoznania się z prototypem.</Typography>
                     <br/>
-                    <a href={process.env.PUBLIC_URL + '/we-make-buttons-hackyeah-2019.pdf'} target="_blank">
-                      <Typography variant="body2" style={{color: '#55f', textDecoration: 'underline'}}>Download PDF presentations.</Typography>
-                    </a>
                   </Grid>
                 </Grid>
-                <div style={{textAlign: 'right'}}><LeafIcon transform="rotate(180)"/></div>
               </div>
             </div>
             <div className={classes.skipDiv}>
-              <Typography variant="h5" onClick={this.closeModal}>skip</Typography>
+              <Typography variant="h5" onClick={this.closeModal}>zamknij</Typography>
             </div>
           </div>
         </Modal>

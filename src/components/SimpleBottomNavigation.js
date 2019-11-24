@@ -3,9 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import PersonIcon from '@material-ui/icons/Person';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
-import HomeIcon from '@material-ui/icons/Home';
+import HeartIcon from './icons/HeartIcon';
+import HomeIcon from './icons/HomeIcon';
+import HumanIcon from './icons/HumanIcon';
+import TickIcon from './icons/TickIcon';
 import DescriptionIcon from '@material-ui/icons/Description';
 import COLORS from '../variables/colors';
 import { withRouter } from 'react-router';
@@ -15,26 +17,28 @@ const useStyles = makeStyles({
       position: 'fixed',
       width: '100%',
       bottom: 0,
-      backgroundColor: COLORS.green,
+      backgroundColor: COLORS.yellow_base,
   },
   icon: {
-      fill: COLORS.white,
+      marginTop: '5px',
+      marginBottom: '5px',
+      fill: COLORS.black_base,
   },
   iconText: {
-      color: COLORS.white,
+      color: COLORS.black_base,
   },
   bottomNavigation: {
-    color: COLORS.white,
+    color: COLORS.black_base,
   },
 });
 
 const bottomNavigationOverrideClasses = makeStyles({
   root: {
-    color: COLORS.white,
+    color: COLORS.black_base,
   },
   selected: {
-    color: COLORS.white,
-    backgroundColor: COLORS.selected_green,
+    color: COLORS.black_base,
+    backgroundColor: COLORS.yellow_base,
   },
 });
 
@@ -50,18 +54,17 @@ function SimpleBottomNavigation(props) {
 
   return (
     <BottomNavigation
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
+      // value={value}
+      // onChange={(event, newValue) => {
+      //   setValue(newValue);
+      // }}
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction  onClick={() => {onChnageBottom('/');}} label="Home" classes={overrideClasses} icon={<HomeIcon className={classes.icon}/>}/>
-      <BottomNavigationAction label="EcoTips" onClick={() => {onChnageBottom('/tips')}} classes={overrideClasses} icon={<DescriptionIcon className={classes.icon}/>} />
-      <BottomNavigationAction label="Loyalty" classes={overrideClasses} icon={<LoyaltyIcon className={classes.icon}/>} />
-      <BottomNavigationAction label="Maps" classes={overrideClasses} onClick={() => {onChnageBottom('/map');}} icon={<LocationOnIcon className={classes.icon}/>} />
-      <BottomNavigationAction label="Profile" classes={overrideClasses} onClick={() => {onChnageBottom('/profile');}} icon={<PersonIcon className={classes.icon}/>} />
+      <BottomNavigationAction label="Obszar" onClick={() => {onChnageBottom('/');}} classes={overrideClasses} icon={<TickIcon className={classes.icon}/>}/>
+      <BottomNavigationAction label="Wybrane" onClick={() => {onChnageBottom('/')}} classes={overrideClasses} icon={<HeartIcon className={classes.icon}/>} />
+      <BottomNavigationAction label="Tablica" classes={overrideClasses} icon={<HomeIcon className={classes.icon}/>} />
+      <BottomNavigationAction label="Profil" classes={overrideClasses} onClick={() => {onChnageBottom('/');}} icon={<HumanIcon className={classes.icon}/>} />
     </BottomNavigation>
   );
 }
